@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Ticket</title>
+</head>
+<body>
+    <h2>Book Ticket</h2>
+    <form method="POST">
+        Name: <input type="text" name="name"><br>
+        Flight No:
+        <select name="flight_no">
+            {% for flight in flights %}
+            <option value="{{ flight[0] }}">{{ flight[0] }} ({{ flight[1] }} seats left)</option>
+            {% endfor %}
+        </select><br>
+        <input type="submit" value="Book Ticket">
+    </form>
+</body>
+</html>
